@@ -1,6 +1,6 @@
+import express from "express";
 import {BaseRoute} from "../base-route.js";
 import {BuilderService} from "../../services/creational/builder/index.js";
-import express from "express";
 
 export class BuilderRoute extends BaseRoute {
     constructor() {
