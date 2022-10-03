@@ -29,7 +29,7 @@ export class PrototypeService {
     cloneRobot(name) {
         const origin = this.robots.get(name)
         if (!origin) {
-            throw new Error('incorrect robot\'s name')
+            throw new Error('invalid robot\'s name')
         }
 
         return origin.clone()
