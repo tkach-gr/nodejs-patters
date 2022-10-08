@@ -1,6 +1,7 @@
 import express from "express";
 import { BaseRoute } from "../base-route.js";
 import { AdapterRoute } from "./adapter.js";
+import { CompositeRoute } from "./composite.js";
 import { DecoratorRoute } from "./decorator.js";
 import { FacadeRoute } from "./facade.js";
 import { FlyweightRoute } from "./flyweight.js";
@@ -11,6 +12,7 @@ export class StructuralRoute extends BaseRoute {
         super();
 
         this.adapterRoute = new AdapterRoute()
+        this.compositeRoute = new CompositeRoute()
         this.decoratorRoute = new DecoratorRoute()
         this.facadeRoute = new FacadeRoute()
         this.flyweightRoute = new FlyweightRoute()
@@ -21,6 +23,7 @@ export class StructuralRoute extends BaseRoute {
         const router = express.Router()
 
         router.use('/adapter', this.adapterRoute.router())
+        router.use('/composite', this.compositeRoute.router())
         router.use('/decorator', this.decoratorRoute.router())
         router.use('/facade', this.facadeRoute.router())
         router.use('/flyweight', this.flyweightRoute.router())
