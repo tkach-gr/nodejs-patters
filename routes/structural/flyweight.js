@@ -94,6 +94,8 @@ export class FlyweightRoute extends BaseRoute {
      *                   type: string
      *                   nullable: true
      *                   default: null
+     *       422:
+     *         $ref: '#/components/responses/422ValidationError'
      */
     create(req, res) {
         const nickname = req.body.nickname
