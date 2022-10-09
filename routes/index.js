@@ -2,6 +2,7 @@ import express from "express";
 import { BaseRoute } from "./base-route.js";
 import { CreationalRoute } from "./creational/index.js";
 import { StructuralRoute } from "./structural/index.js";
+import { BehavioralRoute } from "./behavioral/index.js";
 
 class ApplicationRoute extends BaseRoute {
     constructor() {
@@ -9,6 +10,7 @@ class ApplicationRoute extends BaseRoute {
 
         this.creationalRoute = new CreationalRoute()
         this.structuralRoute = new StructuralRoute()
+        this.behavioralRoute = new BehavioralRoute()
     }
 
     router() {
@@ -16,6 +18,7 @@ class ApplicationRoute extends BaseRoute {
 
         router.use('/creational', this.creationalRoute.router())
         router.use('/structural', this.structuralRoute.router())
+        router.use('/behavioral', this.behavioralRoute.router())
 
         return router
     }
