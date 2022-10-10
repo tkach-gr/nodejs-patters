@@ -1,5 +1,5 @@
 export class Collection {
     getIterator() { }
 
-    getReverseIterator() { }
+    getReversedIterator() { }
 }
