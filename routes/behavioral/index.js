@@ -1,5 +1,6 @@
 import express from "express";
 import {BaseRoute} from "../base-route.js";
+import {ChainRoute} from "./chain.js";
 import {CommandRoute} from "./command.js";
 import {IteratorRoute} from "./iterator.js";
 import {ObserverRoute} from "./observer.js";
@@ -8,6 +9,7 @@ export class BehavioralRoute extends BaseRoute {
     constructor() {
         super();
 
+        this.chainRoute = new ChainRoute()
         this.commandRoute = new CommandRoute()
         this.iteratorRoute = new IteratorRoute()
         this.observerRoute = new ObserverRoute()
@@ -16,6 +18,7 @@ export class BehavioralRoute extends BaseRoute {
     router() {
         const router = express.Router()
 
+        router.use('/chain', this.chainRoute.router())
         router.use('/command', this.commandRoute.router())
         router.use('/iterator', this.iteratorRoute.router())
         router.use('/observer', this.observerRoute.router())
