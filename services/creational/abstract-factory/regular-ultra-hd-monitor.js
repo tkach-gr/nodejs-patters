@@ -1,5 +1,9 @@
-export class RegularUltraHdMonitor {
+import {UltraHdMonitor} from "./ultra-hd-monitor.js";
+
+export class RegularUltraHdMonitor extends UltraHdMonitor{
     constructor() {
+        super()
+
         this.resolution = '3840×2160'
     }
 

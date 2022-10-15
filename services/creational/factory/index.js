@@ -1,17 +1,16 @@
-import {VehicleFactory} from "./vehicle-factory.js";
+import {CarFactory} from "./car-factory.js";
+import {BicycleFactory} from "./bicycle-factory.js";
 
 export class FactoryService {
-    constructor() {
-        this.factory = new VehicleFactory()
-    }
-
     getEstimateForCar(distanceInKilometers) {
-        const vehicle = this.factory.create('car')
+        const factory = new CarFactory()
+        const vehicle = factory.create()
         return vehicle.estimateTime(distanceInKilometers)
     }
 
     getEstimateForBicycle(distanceInKilometers) {
-        const vehicle = this.factory.create('bicycle')
+        const factory = new BicycleFactory()
+        const vehicle = factory.create()
         return vehicle.estimateTime(distanceInKilometers)
     }
 }
