@@ -23,19 +23,21 @@ export class ChainRoute extends BaseRoute {
      *   post:
      *     summary: Login user
      *     tags: [Behavioral]
-     *     parameters:
-     *       - in: formData
-     *         name: login
-     *         description: User's login
-     *         required: true
-     *         schema:
-     *           type: string
-     *       - in: formData
-     *         name: pass
-     *         description: User's pass
-     *         required: true
-     *         schema:
-     *           type: string
+     *     requestBody:
+     *         content:
+     *           multipart/form-data:
+     *             schema:
+     *               type: object
+     *               required:
+     *                 - login
+     *                 - pass
+     *               properties:
+     *                 login:
+     *                   type: string
+     *                   description: User's login
+     *                 pass:
+     *                   type: string
+     *                   description: User's pass
      *     responses:
      *       200:
      *         description: Success
