@@ -4,6 +4,23 @@ import express from "express";
  * @swagger
  * components:
  *   responses:
+ *     400BadRequestError:
+ *       description: Bad request
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               status:
+ *                 type: string
+ *                 default: error
+ *               data:
+ *                 type: object
+ *                 nullable: true
+ *                 default: null
+ *               error:
+ *                 type: string
+ *                 default: 'Error: Bad request'
  *     404NotFound:
  *       description: Not found
  *       content:
