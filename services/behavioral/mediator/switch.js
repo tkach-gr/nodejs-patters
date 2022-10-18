@@ -1,6 +1,9 @@
-export class Switch {
+import {EventSender} from "./event-sender.js";
+
+export class Switch extends EventSender {
     constructor(mediator) {
-        this.mediator = mediator
+        super(mediator)
+
         this.value = false
     }
 

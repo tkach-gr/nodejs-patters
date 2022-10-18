@@ -1,6 +1,9 @@
-export class Button {
+import {EventSender} from "./event-sender.js";
+
+export class Button extends EventSender {
     constructor(mediator) {
-        this.mediator = mediator
+        super(mediator)
+
         this.isDisabled = false
     }
 

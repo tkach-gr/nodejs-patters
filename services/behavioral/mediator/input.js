@@ -1,6 +1,9 @@
-export class Input {
+import {EventSender} from "./event-sender.js";
+
+export class Input extends EventSender {
     constructor(mediator) {
-        this.mediator = mediator
+        super(mediator)
+
         this.value = ''
     }
 
