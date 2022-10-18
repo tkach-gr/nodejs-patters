@@ -2,7 +2,7 @@ import {beforeEach, describe, expect, it} from "@jest/globals";
 import request from 'supertest'
 import { useApp } from "../../app.js";
 
-describe('observer', function() {
+describe('command', function() {
     let app
 
     beforeEach(() => app = useApp().app)

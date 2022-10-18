@@ -2,7 +2,7 @@ import {describe, expect, it} from "@jest/globals";
 import request from 'supertest'
 import { useApp } from "../../app.js";
 
-describe('observer', () => {
+describe('template', () => {
     const {app} = useApp()
 
     it('parse get request', async function() {
