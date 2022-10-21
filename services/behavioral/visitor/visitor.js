@@ -1,5 +1,5 @@
 export class Visitor {
-    acceptPlayer() {}
+    acceptPlayer(player) {}
 
-    acceptEnemy() {}
+    acceptEnemy(enemy) {}
 }
