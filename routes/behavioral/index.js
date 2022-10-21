@@ -6,6 +6,7 @@ import {IteratorRoute} from "./iterator.js";
 import {MediatorRoute} from "./mediator.js";
 import {MementoRoute} from "./memento.js";
 import {ObserverRoute} from "./observer.js";
+import {StrategyRoute} from "./strategy.js";
 import {TemplateRoute} from "./template.js";
 import {VisitorRoute} from "./visitor.js";
 
@@ -19,6 +20,7 @@ export class BehavioralRoute extends BaseRoute {
         this.mediatorRoute = new MediatorRoute()
         this.mementoRoute = new MementoRoute()
         this.observerRoute = new ObserverRoute()
+        this.strategyRoute = new StrategyRoute()
         this.templateRoute = new TemplateRoute()
         this.visitorRoute = new VisitorRoute()
     }
@@ -32,6 +34,7 @@ export class BehavioralRoute extends BaseRoute {
         router.use('/mediator', this.mediatorRoute.router())
         router.use('/memento', this.mementoRoute.router())
         router.use('/observer', this.observerRoute.router())
+        router.use('/strategy', this.strategyRoute.router())
         router.use('/template', this.templateRoute.router())
         router.use('/visitor', this.visitorRoute.router())
 
