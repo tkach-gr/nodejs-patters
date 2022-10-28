@@ -1,1 +1,1 @@
-web: node main.js
+web: node --inspect-brk main.js
