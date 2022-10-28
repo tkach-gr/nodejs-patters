@@ -1,0 +1,12 @@
+version: "3"
+services:
+
+  admin_server:
+    container_name: server
+    restart: always
+    build: ./
+    command: npm run start
+    ports:
+      - 8010:4000
+    labels:
+      application: "nodejs_server"
