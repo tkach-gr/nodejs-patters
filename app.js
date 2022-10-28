@@ -8,7 +8,7 @@ export function useApp() {
 
     const app = express()
     const host = 'http://localhost'
-    const port = 4000
+    const port = process.env.PORT || 4000
 
     app.get('/', (req, res) => {
         res.send('hello world :)')
